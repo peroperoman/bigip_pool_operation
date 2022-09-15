@@ -8,8 +8,7 @@ MODE="$4"
 ARGS=$#
 
 ### Function
-display_usage()
-{
+display_usage(){
 cat <<EOF
 
 Required settings for .env .
@@ -41,8 +40,7 @@ load_env(){
     fi
 }
 
-check_args()
-{
+check_args(){
     if [ $ARGS -eq 4 ] ; then
         return
     else
@@ -58,8 +56,7 @@ check_online_node(){
     fi
 }
 
-node_operation()
-{
+node_operation(){
     curl -sk -u ${USER}:${PWD} -X PUT "${api_url}/~Common~${NODE_NAME}:${PORT}" -H 'Accept: */*' \
     -H 'Content-Type: application/json' -d '{ "state": "user-'$1'", "session": "user-'$2'" }'
 }
