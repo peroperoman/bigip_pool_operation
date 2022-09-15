@@ -1,0 +1,1 @@
+# BIGIPのpoolから特定のnodeをenableしたり、disableしたり
